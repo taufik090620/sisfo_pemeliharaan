@@ -12,9 +12,9 @@ class Data_pinjaman_model extends MY_Model {
 
     public function getPinjamanJoin()
 	{
-        $this->db->select('alat_sedang_dipakais.id, alat_sedang_dipakais.status, alat_sedang_dipakais.kode_barang, alat_sedang_dipakais.tanggal_terpakai,alat_sedang_dipakais.kode_ruangan,alat_sedang_dipakais.kelas, fasilitas.nama_fasilitas, fasilitas.jenis_fasilitas, users.name, users.email');    
+        $this->db->select('alat_sedang_dipakais.id, alat_sedang_dipakais.status, alat_sedang_dipakais.kode_barang, alat_sedang_dipakais.tanggal_terpakai,alat_sedang_dipakais.kode_ruangan,alat_sedang_dipakais.kelas, ruangan.nama_ruangan, ruangan.kapasitas_ruangan, users.name, users.email');    
         $this->db->from('alat_sedang_dipakais');
-        $this->db->join('fasilitas', 'alat_sedang_dipakais.id_fasilitas = fasilitas.id');
+        $this->db->join('ruangan', 'alat_sedang_dipakais.id_ruangan = ruangan.id');
         $this->db->join('users', 'alat_sedang_dipakais.id_pengguna = users.id');
         $query = $this->db->get();
 		return $query->result();
@@ -22,9 +22,9 @@ class Data_pinjaman_model extends MY_Model {
 
     public function getPinjamanJoinByID($id)
 	{
-        $this->db->select('alat_sedang_dipakais.id, alat_sedang_dipakais.kode_barang,alat_sedang_dipakais.kelas, alat_sedang_dipakais.tanggal_terpakai,alat_sedang_dipakais.kode_ruangan, fasilitas.nama_fasilitas, fasilitas.jenis_fasilitas, users.name, users.email, data_inventaris.tahun_peredaran    ');    
+        $this->db->select('alat_sedang_dipakais.id, alat_sedang_dipakais.kode_barang,alat_sedang_dipakais.kelas, alat_sedang_dipakais.tanggal_terpakai,alat_sedang_dipakais.kode_ruangan, ruangan.nama_ruangan, ruangan.kapasitas_ruangan, users.name, users.email, data_inventaris.tahun_peredaran    ');    
         $this->db->from('alat_sedang_dipakais');
-        $this->db->join('fasilitas', 'alat_sedang_dipakais.id_fasilitas = fasilitas.id');
+        $this->db->join('ruangan', 'alat_sedang_dipakais.id_ruangan = ruangan.id');
         $this->db->join('users', 'alat_sedang_dipakais.id_pengguna = users.id');
         $this->db->join('data_inventaris', 'alat_sedang_dipakais.kode_barang = data_inventaris.kode_barang');
         $this->db->where("alat_sedang_dipakais.id", $id );

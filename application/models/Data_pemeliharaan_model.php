@@ -12,9 +12,9 @@ class Data_pemeliharaan_model extends MY_Model {
 
     public function getPemeliharaanJoin()
 	{
-        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan, fasilitas.nama_fasilitas, fasilitas.jenis_fasilitas');    
+        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan, ruangan.nama_ruangan, ruangan.kapasitas_ruangan');    
         $this->db->from('pemeliharaan');
-        $this->db->join('fasilitas', 'pemeliharaan.id_fasilitas = fasilitas.id');
+        $this->db->join('ruangan', 'pemeliharaan.id_ruangan = ruangan.id');
         $query = $this->db->get();
 		return $query->result();
 	}
@@ -23,7 +23,7 @@ class Data_pemeliharaan_model extends MY_Model {
 	{
         $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan, data_inventaris.nama_barang, data_inventaris.nama_barang, ');    
         $this->db->from('pemeliharaan');
-        $this->db->join('fasilitas', 'pemeliharaan.id_fasilitas = fasilitas.id');
+        $this->db->join('ruangan', 'pemeliharaan.id_ruangan = ruangan.id');
         $this->db->join('data_inventaris', 'pemeliharaan.nama_barang = data_inventaris.nama_barang');
         $this->db->where("pemeliharaan.id", $id );
         $query = $this->db->get();
@@ -44,24 +44,15 @@ class Data_pemeliharaan_model extends MY_Model {
     
     public function getListPemeliharaanEdit()
     {
-        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan');
+        $this->db->select('pemeliharaan.id, data_inventaris.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan');
         $this->db->from('pemeliharaan');
         $this->db->join('data_inventaris', 'pemeliharaan.nama_barang = data_inventaris.nama_barang', 'left');
+        $this->db->where('pemeliharaan.nama_barang IS NOT NULL');
         $query = $this->db->get();
-    
-        // Update kondisi di tabel data_inventaris jika ada kondisi baru
-        foreach ($query->result() as $row) {
-            $data = array(
-                'kondisi' => $row->kondisi
-            );
-            $this->db->where('nama_barang', $row->nama_barang);
-            $this->db->update('data_inventaris', $data);
-        }
-    
         return $query->result();
     }
     
-    
+  
     public function get_print() {
         $query = $this->db->get('data_pemeliharaan');
         return $query->result();

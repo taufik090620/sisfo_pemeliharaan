@@ -49,12 +49,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </li>
   <?php endif ?>
 
-  <?php if (hasPermissions('fasilitas_list')) : ?>
+  <?php if (hasPermissions('ruangan_list')) : ?>
     <li class="nav-item">
-      <a href="<?php echo url('datafasilitas') ?>" class="nav-link <?php echo ($page->menu == 'datafasilitas') ? 'active' : '' ?>">
+      <a href="<?php echo url('dataruangan') ?>" class="nav-link <?php echo ($page->menu == 'dataruangan') ? 'active' : '' ?>">
         <i class="nav-icon fas fa-industry"></i>
         <p>
-          <?php echo lang('data_fasilitas') ?>
+          <?php echo lang('data_ruangan') ?>
         </p>
       </a>
     </li>

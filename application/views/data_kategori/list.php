@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                 <h3 class="card-title p-3"><?php echo lang('data_kategori') ?></h3>
                 <div class="ml-auto p-2">
 <!-- buttons -->
-                    <?php if (hasPermissions('fasilitas_add')): ?>
+                    <?php if (hasPermissions('ruangan_add')): ?>
                       <a href="<?php echo url('datakategori/add') ?>" class="btn btn-primary btn-sm"><span class="pr-1"><i class="fa fa-plus"></i></span> Tambah Data Kategori</a>
                     <?php endif ?>
                 </div>

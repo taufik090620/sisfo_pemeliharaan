@@ -38,10 +38,10 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
           <div class="form-group">
           <label for="formClient-Role">Nama Barang</label>
-            <select name="nama_barang" id="formClient-Role" class="form-control select2" required>
-              <?php foreach ($this->data_pemeliharaan_model->getListPemeliharaanEdit() as $row): ?>
-              <?php $sel = $row->nama_barang == $data_pemeliharaan->nama_barang ? 'selected' : ''; ?>
-              <option value="<?php echo $row->nama_barang ?>" <?php echo $sel ?>><?php echo $row->nama_barang ?></option>
+            <select name="nama_barang" id="formClient-Role" class="form-control select2" readonly>
+              <?php foreach ($this->data_pemeliharaan_model->getListPemeliharaanEdit($nama_barang) as $row): ?>
+              <?php $selected = $row->nama_barang == $data_pemeliharaan->nama_barang ? 'selected' : ''; ?>
+              <option value="<?php echo $row->nama_barang ?>" <?php echo $selected ?>><?php echo $row->nama_barang ?></option>
               <?php endforeach ?>
 
             </select>
@@ -71,17 +71,17 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
       <!-- Default card -->
      <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Fasilitas</h3>
+          <h3 class="card-title">Ruangan</h3>
         </div>
         <div class="card-body">
 
           <div class="form-group">
-            <label for="formClient-Role">ID Fasilitas</label>
-            <select name="id_fasilitas" id="formClient-Role" class="form-control select2" required>
-              <option value="">Pilih Fasilitas</option>
-              <?php foreach ($this->data_fasilitas_model->get() as $row): ?>
-              <?php $sel = $row->id == $data_pemeliharaan->id_fasilitas ? 'selected' : ''; ?>
-              <option value="<?php echo $row->id ?>" <?php echo $sel ?>><?php echo $row->nama_fasilitas ?></option>
+            <label for="formClient-Role">ID Ruangan</label>
+            <select name="id_ruangan" id="formClient-Role" class="form-control select2" required>
+              <option value="">Pilih Ruangan</option>
+              <?php foreach ($this->data_ruangan_model->get() as $row): ?>
+              <?php $sel = $row->id == $data_pemeliharaan->id_ruangan ? 'selected' : ''; ?>
+              <option value="<?php echo $row->id ?>" <?php echo $sel ?>><?php echo $row->nama_ruangan ?></option>
               <?php endforeach ?>
 
             </select>

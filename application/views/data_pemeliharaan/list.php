@@ -30,10 +30,10 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                 <div class="card-header d-flex p-0">
                 <h3 class="card-title p-3"><?php echo lang('data_pemeliharaan') ?></h3>
                 <div class="ml-auto p-2">
-<!-- buttons -->
+                  <!-- buttons -->
                     <a href="<?= base_url('datapemeliharaan/print') ?>" class="btn btn-info btnsm"><i class="fas fa-print"></i>Print</a>
-                    <?php if (hasPermissions('pemeliharaan_add')): ?>
-                      <a href="<?php echo url('datapemeliharaan/add') ?>" class="btn btn-primary btn-sm"><span class="pr-1"><i class="fa fa-plus"></i></span> Tambah Data pemeliharaan</a>
+                    <?php if (hasPermissions('users_add')): ?>
+                      <a href="<?php echo url('datapemeliharaan/add') ?>" class="btn btn-primary btn-sm"><span class="pr-1"><i class="fa fa-plus"></i></span> Tambah Data Pemeliharaan</a>
                     <?php endif ?>
                 </div>
                 </div>
@@ -44,10 +44,11 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                   <thead>
                   <tr>
                     <th>Nama Barang</th>
-                    <th>Nama Fasilitas</th>
+                    <th>Nama Ruangan</th>
                     <th>Kondisi</th>
                     <th>Tanggal pemeliharaan</th>
                     <th>Keterangan</th>
+                    <th><?php echo lang('action') ?></th>
                   </tr>
                   </thead>
                   
@@ -58,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                       <?php echo $row->nama_barang ?>
                       </td>
                       <td>
-                      <?php echo $row->nama_fasilitas ?>
+                      <?php echo $row->nama_ruangan ?>
                       </td>
                       <td>
                       <?php echo $row->kondisi ?>
@@ -67,11 +68,14 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                       <td>
                       <?php echo $row->keterangan ?>
                       </td>
-                      <td class="text-center">
-                        <?php if (hasPermissions('pemeliharaan_edit')): ?>
+                      <td>
+                        <?php if (hasPermissions('users_edit')): ?>
                           <a href="<?php echo url('datapemeliharaan/edit/'.$row->id) ?>" class="btn btn-sm btn-primary" title="<?php echo lang('edit_user') ?>" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
                         <?php endif ?>
-                        <?php if (hasPermissions('pemeliharaan_delete')): ?>
+                        <?php if (hasPermissions('users_view')): ?>
+                          <a href="<?php echo url('datapemeliharaan/view/'.$row->id) ?>" class="btn btn-sm btn-info" title="<?php echo lang('view_user') ?>" data-toggle="tooltip"><i class="fa fa-eye"></i></a>
+                        <?php endif ?>
+                        <?php if (hasPermissions('users_delete')): ?>
                           <?php if ($row->id!=1 && logged('id')!=$row->id): ?>
                             <a href="<?php echo url('datapemeliharaan/delete/'.$row->id) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Do you really want to delete this user ?')" title="<?php echo lang('delete_user') ?>" data-toggle="tooltip"><i class="fa fa-trash"></i></a>
                           <?php else: ?>

@@ -9,12 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
     <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-        <h1><?php echo lang('data_ruangan') ?></h1>
+        <h1>Data Ruangan</h1>
         </div>
         <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="<?php echo url('/') ?>"><?php echo lang('home') ?></a></li>
-            <li class="breadcrumb-item active"><?php echo lang('data_ruangan') ?></li>
+            <li class="breadcrumb-item active">Data Ruangan</li>
         </ol>
         </div>
     </div>
@@ -28,18 +28,12 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
             <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex p-0">
-                <h3 class="card-title p-3"><?php echo lang('data_ruangan') ?></h3>
+                <h3 class="card-title p-3">Data Ruangan</h3>
                 <div class="ml-auto p-2">
 <!-- buttons -->
-                    <?php if (hasPermissions('move_inventory')): ?>  
-                      <a href="<?php echo url('dataruangan/move_inventory') ?>" class="btn btn-success btn-sm"><span class="pr-1"><i class="fa fa-plus"></i></span> Pindah Inventaris</a>
-                    <?php endif ?>
-                    
                     <?php if (hasPermissions('ruangan_add')): ?>
                       <a href="<?php echo url('dataruangan/add') ?>" class="btn btn-primary btn-sm"><span class="pr-1"><i class="fa fa-plus"></i></span> Tambah Data Ruangan</a>
                     <?php endif ?>
-
-
                 </div>
                 </div>
                  
@@ -48,8 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                 <table id="example1" class="table table-bordered table-hover table-striped">
                   <thead>
                   <tr>
-                    <th>Nama Ruangan</th>
-                    <th>Kapasitas Ruangan</th>
+                    <th>Nama ruangan</th>
+                    <th>Kapasitas ruangan</th>
                     <th></th>
                   </tr>
                   </thead>

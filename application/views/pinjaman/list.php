@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                   <thead>
                   <tr>
                     <th>Kode Barang</th>
-                    <th>Nama Fasilitas</th>
+                    <th>Nama Ruangan</th>
                     <th>Tanggal Terpakai</th>
                     <th>Pengguna</th>
                     <th>Email</th>
@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                     <tr>
                       <td width="60"><?php echo $row->kode_barang ?></td>
                       <td width="50" class="text-center">
-                         <?php echo $row->nama_fasilitas ?>
+                         <?php echo $row->nama_ruangan ?>
                       </td>
                       <td>
                         <?php echo $row->tanggal_terpakai ?>

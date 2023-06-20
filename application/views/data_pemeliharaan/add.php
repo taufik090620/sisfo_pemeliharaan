@@ -70,17 +70,17 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
       <!-- Default card -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Fasilitas</h3>
+          <h3 class="card-title">ruangan</h3>
         </div>
         <div class="card-body">
 
           <div class="form-group">
-            <label for="formClient-Role">ID Fasilitas</label>
-            <select name="id_fasilitas" id="formClient-Role" class="form-control select2" required>
-              <option value="">Pilih Fasilitas</option>
-              <?php foreach ($this->data_fasilitas_model->get() as $row): ?>
+            <label for="formClient-Role">ID Ruangan</label>
+            <select name="id_ruangan" id="formClient-Role" class="form-control select2" required>
+              <option value="">Pilih Ruangan</option>
+              <?php foreach ($this->data_ruangan_model->get() as $row): ?>
                 <?php $sel = !empty(get('role')) && get('role')==$row->id ? 'selected' : '' ?>
-                <option value="<?php echo $row->id ?>" <?php echo $sel ?>><?php echo $row->nama_fasilitas ?></option>
+                <option value="<?php echo $row->id ?>" <?php echo $sel ?>><?php echo $row->nama_ruangan ?></option>
               <?php endforeach ?>
             </select>
           </div>

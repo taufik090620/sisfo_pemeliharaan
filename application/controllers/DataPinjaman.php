@@ -32,7 +32,7 @@ class DataPinjaman extends MY_Controller {
 
 		$id = $this->data_pinjaman_model->create([
 			'kode_barang' => post('kode_barang'),
-			'id_fasilitas' => post('id_fasilitas'),
+			'id_ruangan' => post('id_ruangan'),
 			'tanggal_terpakai' => post('tanggal_terpakai'),
 			'id_pengguna' => post('id_pengguna'),
 			'kelas' => post('kelas'),
@@ -55,7 +55,7 @@ class DataPinjaman extends MY_Controller {
 		$this->historys_model->create([
 			'kode_barang' => post('kode_barang'),
 			'tahun' => post('tahun_peredaran'),
-			'kode_ruangan' => post('kode_ruangan'),
+			'id_ruangan' => post('id_ruangan'),
 			'keterangan' => post('keterangan'),
 			'tanggal_masuk' => post('tanggal_masuk'),
 			'tanggal_keluar' => post('tanggal_keluar'),
@@ -144,7 +144,7 @@ class DataPinjaman extends MY_Controller {
 
 		$data = [
 			'kode_barang' => $this->input->post('kode_barang'),
-			'id_fasilitas' => $this->input->post('id_fasilitas'),
+			'id_ruangan' => $this->input->post('id_ruangan'),
 			'tanggal_terpakai' => $this->input->post('tanggal_terpakai'),
 			'id_pengguna' => $this->input->post('id_pengguna'),
 			'kelas' => $this->input->post('kelas'),

@@ -13,8 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="<?php echo url('/dataruangan') ?>"><?php echo lang('data_ruangan') ?></a></li>
-              <li class="breadcrumb-item active"><?php echo lang('data_ruangan') ?></li>
+              <li class="breadcrumb-item"><a href="<?php echo url('/users') ?>"><?php echo lang('users') ?></a></li>
+              <li class="breadcrumb-item active"><?php echo lang('new_user') ?></li>
             </ol>
           </div>
         </div>
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
           </div>
 
           <div class="form-group">
-            <label>kapasitas ruangan</label>
+            <label>Kapasitas Ruangan</label>
             <input type="text" class="form-control" name="kapasitas_ruangan" placeholder="kapasitas ruangan" />
           </div>
 
@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
   <div class="card">
     <div class="card-footer">
       <div class="row">
-        <div class="col"><a href="<?php echo url('/dataruangan') ?>" onclick="return confirm('Apakah Anda yakin ingin pergi?')" class="btn btn-flat btn-danger"><?php echo lang('cancel') ?></a></div>
+        <div class="col"><a href="<?php echo url('dataruangan') ?>" onclick="return confirm('Are you sure you want to leave?')" class="btn btn-flat btn-danger"><?php echo lang('cancel') ?></a></div>
         <div class="col text-right"><button type="submit" class="btn btn-flat btn-primary"><?php echo lang('submit') ?></button></div>
       </div>
     </div>

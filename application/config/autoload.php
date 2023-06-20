@@ -137,7 +137,7 @@ $autoload['model'] = array(
 	'settings_model',
 	'historys_model',
 	'data_pinjaman_model',
-	'data_fasilitas_model',
+	'data_ruangan_model',
 	'data_inventaris_model',
 	'kategori_inventaris_model',
 	'role_permissions_model',

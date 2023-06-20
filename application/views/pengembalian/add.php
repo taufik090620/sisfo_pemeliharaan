@@ -62,13 +62,13 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
       <!-- Default card -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Fasilitas</h3>
+          <h3 class="card-title">Ruangan</h3>
         </div>
         <div class="card-body">
 
           <div class="form-group">
-            <label for="formClient-Role">Fasilitas</label>
-            <input type="text" class="form-control" name="fasilitas" id="formClient-Name" required placeholder="<?php echo lang('user_enter_name') ?>" value="<?php echo $Pinjam[0]->nama_fasilitas ?>" readonly="readonly" />
+            <label for="formClient-Role">Ruangan</label>
+            <input type="text" class="form-control" name="ruangan" id="formClient-Name" required placeholder="<?php echo lang('user_enter_name') ?>" value="<?php echo $Pinjam[0]->nama_ruangan ?>" readonly="readonly" />
          
           </div>
           

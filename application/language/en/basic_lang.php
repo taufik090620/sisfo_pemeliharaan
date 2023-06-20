@@ -304,7 +304,7 @@ $lang['language'] = "Language";
 $lang['default_lang'] = "Default Language";
 $lang['blank_page'] = "Blank Page";
 
-$lang['data_fasilitas'] = "Data Fasilitas";
+$lang['data_ruangan'] = "Data ruangan";
 $lang['data_pinjaman'] = "Data Pinjaman";
 $lang['history_pinjaman'] = "History Pinjaman";
 $lang['data_pindahan'] = "Data Pindah Inventaris";

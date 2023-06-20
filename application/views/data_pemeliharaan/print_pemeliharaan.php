@@ -18,7 +18,7 @@
             <tr>
                     <th>No</th>
                     <th>Nama Barang</th>
-                    <th>Nama Fasilitas</th>
+                    <th>Nama Ruangan </th>
                     <th>Kondisi</th>
                     <th>Tanggal Pemeliharaan</th>
                     <th>Keterangan</th>
@@ -28,7 +28,7 @@
                 <tr>
                     <td><?= $no++ ?></td>
                     <td><?= $inv->nama_barang ?></td>
-                    <td><?= $inv->nama_fasilitas ?></td>
+                    <td><?= $inv->nama_ruangan ?></td>
                     <td><?= $inv->kondisi ?></td>
                     <td><?= $inv->tanggal_pemeliharaan ?></td>
                     <td><?= $inv->keterangan ?></td>
