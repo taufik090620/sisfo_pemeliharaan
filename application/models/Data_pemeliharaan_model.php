@@ -12,7 +12,7 @@ class Data_pemeliharaan_model extends MY_Model {
 
     public function getPemeliharaanJoin()
 	{
-        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan, ruangan.nama_ruangan, ruangan.kapasitas_ruangan');    
+        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.jurusan, pemeliharaan.keterangan, ruangan.nama_ruangan, ruangan.kapasitas_ruangan');    
         $this->db->from('pemeliharaan');
         $this->db->join('ruangan', 'pemeliharaan.id_ruangan = ruangan.id');
         $query = $this->db->get();
@@ -21,7 +21,7 @@ class Data_pemeliharaan_model extends MY_Model {
 
     public function getPemeliharaanJoinByID($id)
 	{
-        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan, data_inventaris.nama_barang, data_inventaris.nama_barang, ');    
+        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.jurusan, pemeliharaan.keterangan, data_inventaris.nama_barang, data_inventaris.nama_barang, ');    
         $this->db->from('pemeliharaan');
         $this->db->join('ruangan', 'pemeliharaan.id_ruangan = ruangan.id');
         $this->db->join('data_inventaris', 'pemeliharaan.nama_barang = data_inventaris.nama_barang');
@@ -32,7 +32,7 @@ class Data_pemeliharaan_model extends MY_Model {
 
     public function getListPemeliharaanKosong()
     {
-        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan, data_inventaris.nama_barang, data_inventaris.nama_barang, data_inventaris.kondisi as inventaris_kondisi');    
+        $this->db->select('pemeliharaan.id, pemeliharaan.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.jurusan, pemeliharaan.keterangan, data_inventaris.nama_barang, data_inventaris.nama_barang, data_inventaris.kondisi as inventaris_kondisi');    
         $this->db->from('data_inventaris');
         $this->db->join('pemeliharaan', 'pemeliharaan.nama_barang = data_inventaris.nama_barang', 'left');
         $this->db->where("data_inventaris.nama_barang NOT IN (SELECT nama_barang FROM pemeliharaan)", null, false);
@@ -44,7 +44,7 @@ class Data_pemeliharaan_model extends MY_Model {
     
     public function getListPemeliharaanEdit()
     {
-        $this->db->select('pemeliharaan.id, data_inventaris.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan, pemeliharaan.keterangan');
+        $this->db->select('pemeliharaan.id, data_inventaris.nama_barang, pemeliharaan.kondisi, pemeliharaan.tanggal_pemeliharaan,  pemeliharaan.jurusan, pemeliharaan.keterangan');
         $this->db->from('pemeliharaan');
         $this->db->join('data_inventaris', 'pemeliharaan.nama_barang = data_inventaris.nama_barang', 'left');
         $this->db->where('pemeliharaan.nama_barang IS NOT NULL');

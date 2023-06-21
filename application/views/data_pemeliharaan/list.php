@@ -44,7 +44,8 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                   <thead>
                   <tr>
                     <th>Nama Barang</th>
-                    <th>Nama Ruangan</th>
+                    <th>Ruangan</th>
+                    <th>Jurusan</th>
                     <th>Kondisi</th>
                     <th>Tanggal pemeliharaan</th>
                     <th>Keterangan</th>
@@ -62,6 +63,9 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                       <?php echo $row->nama_ruangan ?>
                       </td>
                       <td>
+                      <?php echo $row->jurusan ?>
+                      </td>
+                      <td>
                       <?php echo $row->kondisi ?>
                       </td>
                       <td><?php echo $row->tanggal_pemeliharaan ?></td>
@@ -71,9 +75,6 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                       <td>
                         <?php if (hasPermissions('users_edit')): ?>
                           <a href="<?php echo url('datapemeliharaan/edit/'.$row->id) ?>" class="btn btn-sm btn-primary" title="<?php echo lang('edit_user') ?>" data-toggle="tooltip"><i class="fas fa-edit"></i></a>
-                        <?php endif ?>
-                        <?php if (hasPermissions('users_view')): ?>
-                          <a href="<?php echo url('datapemeliharaan/view/'.$row->id) ?>" class="btn btn-sm btn-info" title="<?php echo lang('view_user') ?>" data-toggle="tooltip"><i class="fa fa-eye"></i></a>
                         <?php endif ?>
                         <?php if (hasPermissions('users_delete')): ?>
                           <?php if ($row->id!=1 && logged('id')!=$row->id): ?>

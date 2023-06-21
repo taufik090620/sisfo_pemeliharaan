@@ -88,6 +88,21 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
         <!-- /.card-body -->
 
       </div>
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Jurusan</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="formClient-Status">Jurusan</label>
+            <select name="jurusan" id="formClient-Status" class="form-control">
+              <option value="RPL" selected>RPL</option>
+              <option value="SIJA">SIJA</option>
+              <option value="TEI">TEI</option>
+            </select>
+          </div>
+          </div>
+        </div>
       <!-- /.card -->
       
     </div>
@@ -122,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
   <div class="card">
     <div class="card-footer">
       <div class="row">
-        <div class="col"><a href="<?php echo url('/pemeliharaan') ?>" onclick="return confirm('Are you sure you want to leave?')" class="btn btn-flat btn-danger"><?php echo lang('cancel') ?></a></div>
+        <div class="col"><a href="<?php echo url('datapemeliharaan') ?>" onclick="return confirm('Are you sure you want to leave?')" class="btn btn-flat btn-danger"><?php echo lang('cancel') ?></a></div>
         <div class="col text-right"><button type="submit" class="btn btn-flat btn-primary"><?php echo lang('submit') ?></button></div>
       </div>
     </div>

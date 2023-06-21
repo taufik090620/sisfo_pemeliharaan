@@ -35,6 +35,7 @@ class DataPemeliharaan extends MY_Controller
 		$id = $this->data_pemeliharaan_model->create([
 			'nama_barang' => post('nama_barang'),
 			'id_ruangan' => post('id_ruangan'),
+			'jurusan' => post ('jurusan'),
 			'kondisi' => post('kondisi'),
 			'tanggal_pemeliharaan' => post('tanggal_pemeliharaan'),
 			'keterangan' => post('keterangan')
@@ -95,6 +96,7 @@ class DataPemeliharaan extends MY_Controller
 		$data = [
 			'nama_barang' => $this->input->post('nama_barang'),
 			'id_ruangan' => $this->input->post('id_ruangan'),
+			'jurusan' => $this->input->post ('jurusan'),
 			'kondisi' => $this->input->post('kondisi'),
 			'tanggal_pemeliharaan' => $this->input->post('tanggal_pemeliharaan'),
 			'keterangan' => $this->input->post('keterangan')

@@ -46,6 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                     <th>Kode Barang</th>
                     <th>Nama Barang</th>
                     <th>Merek</th>
+                    <th>Jurusan</th>
                     <th>Asal Usul</th>
                     <th>Tahun Peredaran</th>
                     <th>Harga Barang</th>
@@ -67,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
                       <td>
                         <?php echo $row->merek ?>
                       </td>
+                      <td><?php echo $row->jurusan ?></td>
                       <td><?php echo $row->asal_usul ?></td>
                       <td><?php echo $row->tahun_peredaran ?></td>
                       <td><?php echo $row->harga_barang ?></td>

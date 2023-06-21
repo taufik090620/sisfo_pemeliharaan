@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <section class="content">
 
-<?php echo form_open_multipart('datapinjaman/update/'.$alat_sedang_dipakais->id, [ 'class' => 'form-validate', 'autocomplete' => 'off' ]); ?>
+<?php echo form_open_multipart('datapinjaman/update/'.$data_pinjam->id, [ 'class' => 'form-validate', 'autocomplete' => 'off' ]); ?>
 
 
   <div class="row">
@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
   <div class="card">
     <div class="card-footer">
       <div class="row">
-        <div class="col"><a href="<?php echo url('/datapinjaman') ?>" onclick="return confirm('Are you sure you want to leave?')" class="btn btn-flat btn-danger"><?php echo lang('cancel') ?></a></div>
+        <div class="col"><a href="<?php echo url('datapinjaman') ?>" onclick="return confirm('Are you sure you want to leave?')" class="btn btn-flat btn-danger"><?php echo lang('cancel') ?></a></div>
         <div class="col text-right"><button type="submit" class="btn btn-flat btn-primary"><?php echo lang('submit') ?></button></div>
       </div>
     </div>

@@ -68,6 +68,23 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
           </div>
           </div>
         </div>
+
+        <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Jurusan</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="formClient-Status">Jurusan</label>
+            <select name="jurusan" id="formClient-Status" class="form-control">
+            <option value="<?php echo $data_pemeliharaan->jurusan ?>" selected disabled><?php echo $data_pemeliharaan->jurusan ?></option>
+              <option value="RPL" selected>RPL</option>
+              <option value="SIJA">SIJA</option>
+              <option value="TEI">TEI</option>
+            </select>
+          </div>
+          </div>
+        </div>
       <!-- Default card -->
      <div class="card">
         <div class="card-header">

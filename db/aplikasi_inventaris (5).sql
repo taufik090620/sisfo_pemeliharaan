@@ -246,10 +246,10 @@ INSERT INTO `activity_logs` (`id`, `title`, `user`, `ip_address`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alat_sedang_dipakais`
+-- Table structure for table `data_pinjam`
 --
 
-CREATE TABLE `alat_sedang_dipakais` (
+CREATE TABLE `data_pinjam` (
   `id` int(11) NOT NULL,
   `kode_barang` varchar(32) NOT NULL,
   `kode_ruangan` int(11) NOT NULL,
@@ -260,10 +260,10 @@ CREATE TABLE `alat_sedang_dipakais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `alat_sedang_dipakais`
+-- Dumping data for table `data_pinjam`
 --
 
-INSERT INTO `alat_sedang_dipakais` (`id`, `kode_barang`, `kode_ruangan`, `id_fasilitas`, `tanggal_terpakai`, `id_pengguna`, `status`) VALUES
+INSERT INTO `data_pinjam` (`id`, `kode_barang`, `kode_ruangan`, `id_fasilitas`, `tanggal_terpakai`, `id_pengguna`, `status`) VALUES
 (5, '13.56.09.201', 0, 2, '2022-06-20', 2, 'Dikonfirmasi - Belum Dikembalikan'),
 (6, '13.56.09.201', 0, 2, '2022-06-23', 2, 'Dikonfirmasi - Belum Dikembalikan'),
 (7, '13.56.09.201', 0, 2, '2022-06-20', 2, 'Dikonfirmasi - Belum Dikembalikan'),
@@ -738,9 +738,9 @@ ALTER TABLE `activity_logs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `alat_sedang_dipakais`
+-- Indexes for table `data_pinjam`
 --
-ALTER TABLE `alat_sedang_dipakais`
+ALTER TABLE `data_pinjam`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -826,9 +826,9 @@ ALTER TABLE `activity_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
 
 --
--- AUTO_INCREMENT for table `alat_sedang_dipakais`
+-- AUTO_INCREMENT for table `data_pinjam`
 --
-ALTER TABLE `alat_sedang_dipakais`
+ALTER TABLE `data_pinjam`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --

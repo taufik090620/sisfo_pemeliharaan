@@ -145,6 +145,5 @@ $autoload['model'] = array(
 	'roles_model',
 	'activity_model',
 	'templates_model',
-	'data_ruangan_model',
 	'data_pemeliharaan_model',
 );
